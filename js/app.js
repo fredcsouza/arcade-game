@@ -21,7 +21,7 @@ class Enemy extends Character {
     super(sprite, y, x, speed);
     this.speed = speed;
   }
-};
+}
 
 // Atualize a posição do inimigo, método exigido pelo jogo
 // Parâmetro: dt, um delta de tempo entre ticks
@@ -33,7 +33,7 @@ Enemy.prototype.update = function (dt) {
   if (this.x >= 505) {
     this.x = -101;
   }
-};
+}
 
 // Desenhe o inimigo na tela, método exigido pelo jogo
 Enemy.prototype.render = function () {
@@ -49,7 +49,7 @@ class Player extends Character {
     super(sprite, y, x);
     this.vidas = 3;
     this.level = 1;
-  };
+  }
 
   handleInput(key) {
     if (this.vidas !== 0 && this.level < 5) {
@@ -74,7 +74,7 @@ class Player extends Character {
       if (key === 'space')
         this.restartGame();
     }
-  };
+  }
 
   render() {
     super.render();
@@ -96,12 +96,12 @@ class Player extends Character {
     if (this.level === 5) {
       ctx.drawImage(Resources.get('images/youwin.png'), 0, 50, 505, 554);
     }
-  };
+  }
 
   update() {
     this.checkCollisions();
     this.increaseLevel();
-  };
+  }
 
   /*
    * Aumenta o level adicionando novos inimigos
@@ -129,7 +129,7 @@ class Player extends Character {
         }
       }
     }
-  };
+  }
 
   // reseta os inimigos ao level e velocidade
   decreaseLevel() {
@@ -138,7 +138,7 @@ class Player extends Character {
         element.speed -= (this.level - 1) * 0.3;
       }
     }
-  };
+  }
 
   // Verifica as colisões com os inimigos
   checkCollisions() {
@@ -153,7 +153,7 @@ class Player extends Character {
 
       }
     }
-  };
+  }
 
   // Resetar o jogo
   restartGame() {
@@ -164,7 +164,7 @@ class Player extends Character {
     this.y = 350;
     this.x = 202;
   }
-};
+}
 
 // Represente seus objetos como instâncias.
 // Coloque todos os objetos inimgos numa array allEnemies
