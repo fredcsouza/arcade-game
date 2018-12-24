@@ -158,11 +158,11 @@ class Player extends Character {
   // Resetar o jogo
   restartGame() {
     this.decreaseLevel();
-    player.level = 1;
-    player.vidas = 3;
+    this.level = 1;
+    this.vidas = 3;
     allEnemies.length = 3;
-    player.y = 350;
-    player.x = 202;
+    this.y = 350;
+    this.x = 202;
   }
 };
 
